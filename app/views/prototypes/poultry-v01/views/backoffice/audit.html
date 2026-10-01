@@ -51,6 +51,40 @@ Back office: Applications
       {# </div> #}
       </div>
 
+<div style="display: inline-block; margin-right: 20px;">
+    {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+    {{ govukSelect({
+      id: "filter",
+      name: "filter",
+      label: {
+        text: "Type of change",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      items: [
+        {
+          value: "pending",
+          text: "Claim withdrawn"
+        },
+        {
+          value: "approved",
+          text: "Date of visit changed"
+        },
+        {
+          value: "approved",
+          text: "URN changed"
+        },
+        {
+          value: "all",
+          text: "All types of changes",
+          selected: true
+        }
+      ]
+    }) }}
+
+        </div>
+
 <div style="display: inline-block;">
     {% from "govuk/components/select/macro.njk" import govukSelect %}
 
